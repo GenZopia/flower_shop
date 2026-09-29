@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Genzopia Flower Shop</title>
+  <meta name="description" content="Get in touch with Genzopia Flower Shop. Schedule a consultation, ask about same-day delivery, or inquire about wedding and event florals in New York, NY." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .map-placeholder {
+      width: 100%;
+      height: 360px;
+      position: relative;
+      overflow: hidden;
+    }
+    .map-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.7) brightness(0.9);
+    }
+    .map-pin-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .map-pin-overlay svg { width: 44px; height: 44px; color: var(--accent); filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4)); }
+    .map-pin-overlay span {
+      background: var(--white);
+      padding: 8px 20px;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      font-family: var(--font-sans);
+      color: var(--charcoal);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .hours-table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+    .hours-table tr { border-bottom: 1px solid var(--border); }
+    .hours-table tr:last-child { border-bottom: none; }
+    .hours-table td { padding: 10px 0; font-size: 0.88rem; color: var(--charcoal); }
+    .hours-table td:last-child { text-align: right; color: var(--olive); }
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 40px;
+      border: 1px solid var(--border);
+      background: var(--cream);
+    }
+    .form-success svg { width: 48px; height: 48px; color: var(--accent); margin: 0 auto 16px; display: block; }
+    .form-success h3 { font-family: var(--font-serif); font-size: 1.6rem; color: var(--dark); margin-bottom: 8px; }
+    .form-success p { font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement-bar">
+    Free same-day delivery on orders over $150 &nbsp;·&nbsp; New York, NY &nbsp;·&nbsp; Call us: (555) 867-3090
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <nav class="nav-left">
+        <a href="index.html" class="nav-link">Shop</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+      </nav>
+      <a href="index.html" class="logo">
+        Genzopia<span>Flower Shop</span>
+      </a>
+      <nav class="nav-right">
+        <a href="contact.html" class="nav-link active">Contact</a>
+        <a href="#" class="nav-icon" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </a>
+        <a href="#" class="nav-icon" aria-label="Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        </a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose">&#x2715;</button>
+    <a href="index.html" class="nav-link">Shop</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+
+  <main>
+
+    <!-- PAGE BANNER -->
+    <section class="page-banner">
+      <div class="page-banner-bg">
+        <img src="images/ig-7.jpg" alt="Contact Genzopia Flower Shop" />
+      </div>
+      <div class="page-banner-overlay"></div>
+      <div class="page-banner-content">
+        <p class="section-label">Reach Out</p>
+        <h1>Contact Us</h1>
+        <p>Genzopia Flower Shop creates luxurious arrangements that convey elegance and sophistication. We'd love to hear from you.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- LEFT: Info -->
+          <div class="contact-info">
+            <p class="section-label">Get In Touch</p>
+            <div class="divider"></div>
+            <h2>Let's Create Something Beautiful</h2>
+            <p>Whether you're planning a wedding, need same-day delivery, or want to discuss a corporate floral account — our team is ready to help.</p>
+
+            <div class="contact-detail">
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <h4>Our Location</h4>
+                  <p>84 Blossom Avenue<br>New York, NY 10012</p>
+                </div>
+              </div>
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 10.5 19.79 19.79 0 01.88 1.82 2 2 0 012.86 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                </div>
+                <div>
+                  <h4>Phone</h4>
+                  <p>(555) 867-3090</p>
+                </div>
+              </div>
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div>
+                  <h4>Email</h4>
+                  <p>hello@genzopia.com</p>
+                </div>
+              </div>
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div>
+                  <h4>Hours of Operation</h4>
+                  <table class="hours-table">
+                    <tr><td>Monday – Friday</td><td>8:00 am – 6:00 pm</td></tr>
+                    <tr><td>Saturday</td><td>9:00 am – 5:00 pm</td></tr>
+                    <tr><td>Sunday</td><td>10:00 am – 3:00 pm</td></tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <p class="section-label" style="margin-bottom:12px">Follow Along</p>
+              <div style="display:flex;gap:12px">
+                <a href="#" class="social-icon" aria-label="Instagram" style="border-color:var(--border)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+                </a>
+                <a href="#" class="social-icon" aria-label="Facebook" style="border-color:var(--border)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                </a>
+                <a href="#" class="social-icon" aria-label="Pinterest" style="border-color:var(--border)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.04-2.83.18-.77 1.22-5.15 1.22-5.15s-.31-.62-.31-1.54c0-1.45.84-2.53 1.88-2.53.89 0 1.32.67 1.32 1.47 0 .9-.57 2.24-.87 3.48-.25 1.04.52 1.88 1.54 1.88 1.85 0 3.1-2.37 3.1-5.18 0-2.15-1.46-3.65-3.54-3.65-2.41 0-3.83 1.81-3.83 3.68 0 .73.28 1.51.63 1.93.07.08.08.15.06.24l-.23.97c-.04.15-.13.18-.3.11C7.56 13.38 7 11.93 7 10.7c0-2.92 2.12-5.6 6.12-5.6 3.21 0 5.7 2.29 5.7 5.35 0 3.19-2.01 5.75-4.8 5.75-.94 0-1.82-.49-2.12-1.06l-.58 2.15c-.21.81-.77 1.82-1.15 2.44.87.27 1.79.41 2.73.41 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Form -->
+          <div>
+            <p class="section-label">Send a Message</p>
+            <div class="divider"></div>
+            <h2 style="margin-bottom:32px">How Can We<br><em>Help You?</em></h2>
+
+            <div class="form-success" id="formSuccess">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <h3>Message Sent</h3>
+              <p>Thank you for reaching out. A member of our team will be in touch within one business day.</p>
+            </div>
+
+            <form class="contact-form" id="contactForm" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName">First Name *</label>
+                  <input type="text" id="firstName" name="firstName" placeholder="Jane" required />
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last Name *</label>
+                  <input type="text" id="lastName" name="lastName" placeholder="Smith" required />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" placeholder="(555) 867-3000" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="service">How Can We Help?</label>
+                <select id="service" name="service">
+                  <option value="" disabled selected>Select a service…</option>
+                  <option value="wedding">Wedding Flowers</option>
+                  <option value="event">Event &amp; Gala Florals</option>
+                  <option value="corporate">Corporate &amp; Hotel Account</option>
+                  <option value="delivery">Same-Day Delivery</option>
+                  <option value="consultation">General Consultation</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="eventDate">Event Date (if applicable)</label>
+                <input type="date" id="eventDate" name="eventDate" />
+              </div>
+              <div class="form-group">
+                <label for="message">Your Message *</label>
+                <textarea id="message" name="message" placeholder="Tell us about your event, vision, or question…" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-dark" style="width:100%;justify-content:center;padding:18px 32px;font-size:0.75rem">
+                Send Message
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- MAP / LOCATION IMAGE -->
+    <div class="map-placeholder">
+      <img src="images/ig-7.jpg" alt="New York, NY location" />
+      <div class="map-pin-overlay">
+        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+        </svg>
+        <span>84 Blossom Avenue, New York, NY</span>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+      <div class="container">
+        <div class="faq-label">
+          <p class="section-label">Before You Reach Out</p>
+          <h2>Frequently Asked Questions</h2>
+          <div class="divider"></div>
+          <p>Quick answers to common questions about our services and delivery.</p>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">
+              <h4>Do you offer same-day flower delivery in New York, NY?</h4>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Genzopia Flower Shop provides same-day delivery across New York, NY for most orders placed before our daily cutoff. Each bouquet is made to order using the freshest seasonal blooms available.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <h4>How far in advance should I book wedding florals?</h4>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>We recommend booking as early as possible — ideally 6 to 12 months in advance for weddings. This ensures availability and gives us ample time to plan a design that truly reflects your vision.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <h4>What areas do you deliver to?</h4>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>We deliver throughout New York, NY and to select areas in Northern Virginia and suburban Maryland. Contact us to confirm delivery availability for your specific location or venue.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <h4>Can I visit the studio to discuss an arrangement?</h4>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Yes — we welcome in-person consultations by appointment. Use the form above to schedule a time, or give us a call directly at (555) 867-3090.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <h4>Do you offer corporate or subscription floral accounts?</h4>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely. We manage weekly and bi-weekly floral programs for hotels, restaurants, embassies, and offices. Contact us via the form or email to discuss a customised account that suits your brand and space.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <p class="section-label" style="text-align:center">Book an Appointment</p>
+      <h2>Ready to Plan Your<br><em>Floral Experience?</em></h2>
+      <p>Our design team is ready to bring your vision to life with timeless, custom arrangements crafted from the season's finest blooms.</p>
+      <a href="#contactForm" class="btn btn-dark">
+        Send Us a Message
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo footer-logo">
+          Genzopia<span>Flower Shop</span>
+        </a>
+        <p>A luxury florist in the heart of New York, NY, delivering elegant arrangements for over 20 years.</p>
+        <div class="footer-social" style="margin-top:28px">
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Pinterest">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.04-2.83.18-.77 1.22-5.15 1.22-5.15s-.31-.62-.31-1.54c0-1.45.84-2.53 1.88-2.53.89 0 1.32.67 1.32 1.47 0 .9-.57 2.24-.87 3.48-.25 1.04.52 1.88 1.54 1.88 1.85 0 3.1-2.37 3.1-5.18 0-2.15-1.46-3.65-3.54-3.65-2.41 0-3.83 1.81-3.83 3.68 0 .73.28 1.51.63 1.93.07.08.08.15.06.24l-.23.97c-.04.15-.13.18-.3.11C7.56 13.38 7 11.93 7 10.7c0-2.92 2.12-5.6 6.12-5.6 3.21 0 5.7 2.29 5.7 5.35 0 3.19-2.01 5.75-4.8 5.75-.94 0-1.82-.49-2.12-1.06l-.58 2.15c-.21.81-.77 1.82-1.15 2.44.87.27 1.79.41 2.73.41 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <ul class="footer-links">
+          <li><a href="index.html">Shop</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul class="footer-links">
+          <li><a href="services.html">Wedding Flowers</a></li>
+          <li><a href="services.html">Events &amp; Galas</a></li>
+          <li><a href="services.html">Corporate Florals</a></li>
+          <li><a href="services.html">Same-Day Delivery</a></li>
+          <li><a href="contact.html">Consultations</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-newsletter">
+        <h5>Stay in Bloom</h5>
+        <p>Subscribe for seasonal collections, floral inspiration, and exclusive offers.</p>
+        <form class="newsletter-form" onsubmit="return false;">
+          <input type="email" placeholder="Your email address" aria-label="Email address" />
+          <button type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Genzopia Flower Shop. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Shipping &amp; Returns</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileClose = document.getElementById('mobileClose');
+    hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
+    mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    mobileMenu.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const required = this.querySelectorAll('[required]');
+      let valid = true;
+      required.forEach(field => {
+        if (!field.value.trim()) { field.style.borderColor = '#c0392b'; valid = false; }
+        else field.style.borderColor = '';
+      });
+      if (!valid) return;
+      this.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+      document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  </script>
+
+</body>
+</html>
